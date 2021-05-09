@@ -87,5 +87,9 @@ def writeToFile(orders):
 		print('I/O error')
 
 if __name__ == '__main__':
-	_ , path1, path2 = sys.argv
-	process(path1, path2)
+	try:
+		_ , path1, path2 = sys.argv
+	except ValueError:
+		print('We need 2 files as input.')
+	else:
+		process(path1, path2)
